@@ -34,7 +34,9 @@ const handle_ask = async () => {
 	let message = message_input.value;
 
 	if (message.length > 0) {
-		message_input.value = ``;
+		setTimeout(() => {
+			message_input.value = ``;
+		}, 1);
 		message_input.dispatchEvent(new Event("input"));
 		await ask_gpt(message);
 	}
